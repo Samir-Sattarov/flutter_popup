@@ -53,7 +53,7 @@ class CustomPopupState extends State<CustomPopup> {
     final anchor = widget.anchorKey?.currentContext ?? context;
     final renderBox = anchor.findRenderObject() as RenderBox?;
     if (renderBox == null) return;
-    Navigator.of(context, rootNavigator: widget.rootNavigator).pop(context);
+    Navigator.of(context, rootNavigator: widget.rootNavigator).pop();
   }
 
   void show() {
