@@ -50,10 +50,9 @@ class CustomPopup extends StatefulWidget {
 
 class CustomPopupState extends State<CustomPopup> {
   void hide() {
-    final anchor = widget.anchorKey?.currentContext ?? context;
-    final renderBox = anchor.findRenderObject() as RenderBox?;
-    if (renderBox == null) return;
-    Navigator.of(context, rootNavigator: widget.rootNavigator).pop();
+    if (Navigator.of(context, rootNavigator: widget.rootNavigator).canPop()) {
+      Navigator.of(context, rootNavigator: widget.rootNavigator).pop();
+    }
   }
 
   void show() {
